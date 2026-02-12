@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ asset('css/layout.css') }}">
+    @yield('styles')
+</head>
+
+<body>
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <h2>Author Panel
+                <span class="icon">✍️</span>
+            </h2>
+        </div>
+
+        <ul class="sidebar-menu">
+            <li class="active">
+                <span class="icon">📊</span>
+                <a href="{{route('author.dashboard')}}">Dashboard</a>
+            </li>
+            <li>
+                <span class="icon">📝</span>
+                <a href="{{route('author.posts.index')}}">My Posts</a>
+            </li>
+            <li>
+                <span class="icon">➕</span>
+                <a href="{{route('author.posts.create')}}">Create Post</a>
+            </li>
+            <li>
+                <span class="icon">📄</span>
+                <a href="#">Draft</a>
+            </li>
+            <li>
+                <span class="icon">🏠</span>
+                <a href="{{route('home')}}">View Site</a>
+            </li>
+            <li>
+                <span class="icon">⚙️</span>
+                    <a href="{{ route('profile.edit') }}">Settings</a>
+            </li>
+            <li>
+                <span class="icon">🚪</span>
+                <form method="POST" action="{{ route('logout') }}" style="display: inline;">
+                    @csrf
+                    <a href="{{ route('logout') }}"
+                        onclick="event.preventDefault(); this.closest('form').submit();">Logout</a>
+                </form>
+            </li>
+        </ul>
+
+        <div class="sidebar-user">
+            <div class="avatar"></div>
+            <div class="user-info">
+                <div class="user-name">Author</div>
+                <div class="user-role">Author</div>
+            </div>
+        </div>
+    </div>
+
+    <main class="main-content">
+        @yield('content')
+    </main>
+
+</body>
+
+</html>
