@@ -12,9 +12,7 @@ class AuthorDashboardController extends Controller
     {
         $recentPosts = Post::ownedByCurrentUser()
             ->latest()
-            ->limit(4)
-            ->get();
-
+            ->paginate(6);
         // Pass to view
         return view('author.dashboard', compact('recentPosts'));
     }
