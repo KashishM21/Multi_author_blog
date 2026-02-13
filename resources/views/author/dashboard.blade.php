@@ -2,6 +2,7 @@
 
 @section('styles')
     <link rel="stylesheet" href="{{asset('css/dashboard.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/pagination.css') }}">
 @endsection
 
 @section('content')
@@ -51,7 +52,7 @@
         </div>
         <div>
             <a href="{{ route('author.posts.create') }}" class=" ">Create New Post</a>
-            <a href=""> View Draft</a>
+            <a href="{{ route('author.posts.index', ['status' => 'draft']) }}"> View Draft</a>
             <a href="{{ route('home') }}">View Site</a>
         </div>
     </div>
@@ -101,8 +102,9 @@
 
         </table>
 
+        <div class="pagination">
+            {{ $recentPosts->links() }}
+        </div>
     </div>
-
     </div>
-@endsection
-{{-- @extends('layouts.footer') --}}
+@endsection {{-- @extends('layouts.footer') --}}

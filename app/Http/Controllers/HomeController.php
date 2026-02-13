@@ -14,7 +14,7 @@ class HomeController extends Controller
             ->with('user')
             // ->take(12)
             // ->get();
-            ->paginate((9));
+            ->paginate((6));
 
         return view('home', compact('posts'));
     }

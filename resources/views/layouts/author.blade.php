@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Document</title>
     <link rel="stylesheet" href="{{ asset('css/layout.css') }}">
     @yield('styles')
@@ -20,41 +21,41 @@
 
         <ul class="sidebar-menu">
             <div class="upper">
-            <li class="active">
-                <span class="icon">📊</span>
-                <a href="{{route('author.dashboard')}}">Dashboard</a>
-            </li>
-            <li>
-                <span class="icon">📝</span>
-                <a href="{{route('author.posts.index')}}">My Posts</a>
-            </li>
-            <li>
-                <span class="icon">➕</span>
-                <a href="{{route('author.posts.create')}}">Create Post</a>
-            </li>
-            <li>
-                <span class="icon">📄</span>
-                <a href=" {{ route('author.posts.index', ['status' => 'draft']) }}">Draft</a>
-            </li>
+                <li class="active">
+                    <span class="icon">📊</span>
+                    <a href="{{route('author.dashboard')}}">Dashboard</a>
+                </li>
+                <li>
+                    <span class="icon">📝</span>
+                    <a href="{{route('author.posts.index')}}">My Posts</a>
+                </li>
+                <li>
+                    <span class="icon">➕</span>
+                    <a href="{{route('author.posts.create')}}">Create Post</a>
+                </li>
+                <li>
+                    <span class="icon">📄</span>
+                    <a href=" {{ route('author.posts.index', ['status' => 'draft']) }}">Draft</a>
+                </li>
             </div>
-           
+
             <div class="lower">
-            <li>
-                <span class="icon">🏠</span>
-                <a href="{{route('home')}}">View Site</a>
-            </li>
-            <li>
-                <span class="icon">⚙️</span>
-                <a href="{{ route('profile.edit') }}">Settings</a>
-            </li>
-            <li>
-                <span class="icon">🚪</span>
-                <form method="POST" action="{{ route('logout') }}" style="display: inline;">
-                    @csrf
-                    <a href="{{ route('logout') }}"
-                        onclick="event.preventDefault(); this.closest('form').submit();">Logout</a>
-                </form>
-            </li>
+                <li>
+                    <span class="icon">🏠</span>
+                    <a href="{{route('home')}}">View Site</a>
+                </li>
+                <li>
+                    <span class="icon">⚙️</span>
+                    <a href="{{ route('profile.edit') }}">Settings</a>
+                </li>
+                <li>
+                    <span class="icon">🚪</span>
+                    <form method="POST" action="{{ route('logout') }}" style="display: inline;">
+                        @csrf
+                        <a href="{{ route('logout') }}"
+                            onclick="event.preventDefault(); this.closest('form').submit();">Logout</a>
+                    </form>
+                </li>
             </div>
         </ul>
 

@@ -35,12 +35,22 @@ class PostController extends Controller
         $post = Post::findOrFail($id);
         $post->status = $request->status;
 
-        if ($request->status === 'published' && !$post->published_at) {
-            $post->published_at = now();
+        if ($request->status === 'published') {
+            if (!$post->published_at) {
+                $post->published_at = now();
+            }
+        } else {
+            // If it's no longer published, we might want to clear published_at
+            // $post->published_at = null; 
         }
 
         $post->save();
-        return redirect()->route('admin.posts.index')->with('success', 'Post status updated.');
+
+        if ($request->expectsJson()) {
+            return response()->json(['success' => true, 'message' => 'Post status updated.']);
+        }
+
+        return redirect()->back()->with('success', 'Post status updated.');
     }
 
     public function destroy($id)

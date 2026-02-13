@@ -55,7 +55,7 @@ class PostController extends Controller
             $imagePath = $request->file('featured_image')->store('posts', 'public');
         }
 
-        $status = $request->has('save_draft') ? 'draft' : 'published';
+        $status = $request->has('save_draft') ? 'draft' : 'pending';
 
         Post::create([
             'user_id' => Auth::id(),
@@ -65,11 +65,11 @@ class PostController extends Controller
             'content' => $request->content,
             'featured_image' => $imagePath,
             'status' => $status,
-            'published_at' => $status === 'published' ? now() : null,
+            'published_at' => null,
         ]);
 
         return redirect()->route('author.posts.index')
-            ->with('success', 'Post ' . ($status === 'draft' ? 'saved as draft' : 'published') . ' successfully!');
+            ->with('success', 'Post ' . ($status === 'draft' ? 'saved as draft' : 'submitted for review') . ' successfully!');
     }
 
     public function edit($id)
@@ -106,15 +106,16 @@ class PostController extends Controller
             $post->featured_image = $request->file('featured_image')->store('posts', 'public');
         }
 
-        $status = $request->has('save_draft') ? 'draft' : 'published';
+        $status = $request->has('save_draft') ? 'draft' : 'pending';
 
         $post->title = $request->title;
         $post->summary = $request->summary;
         $post->content = $request->content;
         $post->status = $status;
 
-        if ($status === 'published' && !$post->published_at) {
-            $post->published_at = now();
+        // Reset published_at if it's going back to draft or pending
+        if ($status !== 'published') {
+            $post->published_at = null;
         }
 
         $post->save();

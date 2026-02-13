@@ -1,0 +1,10 @@
+.pagination svg {
+    width: 20px;
+    height: 20px;
+}
+.pagination{
+    /* background-color: rgb(108, 108, 252); */
+    max-width: max-content;
+    text-decoration: none;
+    /* color: whitesmoke; */
+}
