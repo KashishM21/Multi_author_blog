@@ -25,6 +25,9 @@
                     <option value="all" {{ $status === 'all' ? 'selected' : '' }}>All</option>
                     <option value="published" {{ $status === 'published' ? 'selected' : '' }}>Published</option>
                     <option value="draft" {{ $status === 'draft' ? 'selected' : '' }}>Draft</option>
+                    <option value="pending" {{ $status === 'pending' ? 'selected' : '' }}>Pending</option>
+                    <option value="rejected" {{ $status === 'rejected' ? 'selected' : '' }}>Rejected</option>
+
                 </select>
             </form>
         </div>
@@ -55,7 +58,8 @@
                                     <form action="{{ route('author.posts.destroy', $post->id) }}" method="POST" class="delete-form">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="btn-action delete" onclick="return confirm('Are you sure you want to delete this post?')">Delete</button>
+                                        <button type="submit" class="btn-action delete"
+                                            onclick="return confirm('Are you sure you want to delete this post?')">Delete</button>
                                     </form>
                                 </td>
                             </tr>

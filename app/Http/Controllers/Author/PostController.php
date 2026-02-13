@@ -62,7 +62,7 @@ class PostController extends Controller
             'title' => $request->title,
             'slug' => $slug,
             'summary' => $request->summary,
-            // 'content' => $request->content,
+            'content' => $request->content,
             'featured_image' => $imagePath,
             'status' => $status,
             'published_at' => $status === 'published' ? now() : null,
@@ -110,7 +110,7 @@ class PostController extends Controller
 
         $post->title = $request->title;
         $post->summary = $request->summary;
-        // $post->content = $request->content;
+        $post->content = $request->content;
         $post->status = $status;
 
         if ($status === 'published' && !$post->published_at) {

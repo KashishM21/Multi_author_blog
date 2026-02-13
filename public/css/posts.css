@@ -1,9 +1,51 @@
+/* Posts Styles - Unified Simple CSS */
+
+.section {
+    padding: 20px 0;
+}
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.page-header .title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333333;
+    margin: 0;
+}
+
+/* Alert */
+.alert {
+    padding: 12px 15px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.alert-success {
+    background-color: #d1fae5;
+    color: #065f46;
+    border: 1px solid #a7f3d0;
+}
+
+.alert-error {
+    background-color: #fee2e2;
+    color: #b91c1c;
+    border: 1px solid #fecaca;
+}
+
+/* Filters (Author & Admin Unified) */
+.filter-section,
 .filters {
-    background: #fff;
-    padding: 15px 20px;
+    background-color: #f9fafb;
+    padding: 15px;
     border-radius: 8px;
     margin-bottom: 20px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e5e7eb;
 }
 
 .filter-form {
@@ -19,36 +61,65 @@
     gap: 8px;
 }
 
+.filter-form label,
 .filter-group label {
     font-size: 14px;
-    color: #333;
+    color: #4b5563;
     font-weight: 500;
 }
 
-.filter-select {
+.filter-form select,
+.filter-select,
+.form-control {
     padding: 8px 12px;
-    border: 1px solid #ddd;
+    border: 1px solid #d1d5db;
     border-radius: 6px;
     font-size: 14px;
-    background: #fff;
-    cursor: pointer;
+    background-color: #ffffff;
+    box-sizing: border-box;
 }
 
-.search-input input {
-    padding: 8px 12px;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    font-size: 14px;
-    width: 200px;
-}
-
-.posts-table-container {
-    background: #fff;
+/* Table */
+.posts-table-container,
+.table-wrapper {
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
+.posts-table,
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.posts-table th,
+.table th {
+    padding: 12px 15px;
+    text-align: left;
+    background-color: #f9fafb;
+    border-bottom: 1px solid #e5e7eb;
+    font-size: 12px;
+    color: #6b7280;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.posts-table td,
+.table td {
+    padding: 15px 12px;
+    border-bottom: 1px solid #f3f4f6;
+    font-size: 14px;
+    color: #374151;
+}
+
+.post-title {
+    font-weight: 600;
+    color: #111827;
+}
+
+/* Author Avatar & Author Info */
 .author {
     display: flex;
     align-items: center;
@@ -58,107 +129,87 @@
 .author-avatar {
     width: 32px;
     height: 32px;
-    background: #4f46e5;
-    color: #fff;
+    background-color: #4f46e5;
+    color: white;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 14px;
-    font-weight: 600;
+    font-size: 12px;
+    font-weight: bold;
 }
 
+/* Status Badges */
+.status-badge,
+.badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.status-badge.published,
+.badge-published {
+    background-color: #d1fae5;
+    color: #047857;
+}
+
+.status-badge.draft,
+.badge-draft {
+    background-color: #fef3c7;
+    color: #b45309;
+}
+
+.status-badge.pending,
+.badge-pending {
+    background-color: #e0e7ff;
+    color: #4338ca;
+}
+
+.status-badge.rejected,
+.badge-rejected {
+    background-color: #fee2e2;
+    color: #b91c1c;
+}
+
+/* Actions */
 .actions {
     display: flex;
-    gap: 8px;
+    gap: 10px;
     align-items: center;
     flex-wrap: wrap;
 }
 
+.btn-action,
 .action-btn {
     padding: 5px 12px;
     border-radius: 4px;
     font-size: 13px;
     text-decoration: none;
-    cursor: pointer;
-    border: none;
     font-weight: 500;
-    background: #f0f0f0;
-    color: #333;
+    border: none;
+    cursor: pointer;
 }
 
-.action-btn:hover {
-    background: #e0e0e0;
+.btn-action.edit,
+.action-btn.edit {
+    background-color: #f3f4f6;
+    color: #374151;
+}
+
+.btn-action.delete,
+.action-btn.delete {
+    background-color: #fee2e2;
+    color: #b91c1c;
 }
 
 .action-btn.view {
-    background: #e3f2fd;
-    color: #1565c0;
+    background-color: #e0f2fe;
+    color: #0369a1;
 }
 
-.action-btn.view:hover {
-    background: #bbdefb;
-}
-
-.action-btn.edit {
-    background: #e8f5e9;
-    color: #2e7d32;
-}
-
-.action-btn.edit:hover {
-    background: #c8e6c9;
-}
-
-.action-btn.delete {
-    background: #ffebee;
-    color: #c62828;
-}
-
-.action-btn.delete:hover {
-    background: #ffcdd2;
-}
-
-.alert {
-    padding: 12px 16px;
-    border-radius: 6px;
-    margin-bottom: 20px;
-    font-size: 14px;
-}
-
-.alert-success {
-    background: #d4edda;
-    color: #155724;
-    border: 1px solid #c3e6cb;
-}
-
-.alert-error {
-    background: #f8d7da;
-    color: #721c24;
-    border: 1px solid #f5c6cb;
-}
-
-.empty-state {
-    text-align: center;
-    padding: 60px 20px;
-}
-
-.empty-state-icon {
-    font-size: 48px;
-    margin-bottom: 15px;
-}
-
-.empty-state-title {
-    font-size: 18px;
-    color: #333;
-    margin: 0 0 8px 0;
-}
-
-.empty-state-text {
-    font-size: 14px;
-    color: #666;
-    margin: 0;
-}
-
+/* Buttons */
 .btn {
     display: inline-block;
     padding: 8px 16px;
@@ -166,193 +217,22 @@
     font-size: 14px;
     font-weight: 500;
     text-decoration: none;
+    border: 1px solid #d1d5db;
+    background-color: #ffffff;
+    color: #374151;
     cursor: pointer;
-    border: 1px solid #ddd;
-    background: #fff;
-    color: #333;
-}
-
-.btn:hover {
-    background: #f5f5f5;
 }
 
 .btn-primary {
-    background: #4f46e5;
-    color: #fff;
-    border-color: #4f46e5;
+    background-color: #2563eb;
+    color: #ffffff;
+    border-color: #2563eb;
 }
 
-.btn-primary:hover {
-    background: #4338ca;
-}
-
-.page-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-.page-title {
-    font-size: 24px;
-    font-weight: 700;
-    color: #333;
-    margin: 0;
-}
-
-.post-content {
-    font-size: 15px;
-    line-height: 1.7;
-    color: #333;
-}
-
-.post-content img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 6px;
-}
-
-.form-group {
-    margin-bottom: 20px;
-}
-
-.form-label {
-    display: block;
-    font-size: 14px;
-    font-weight: 500;
-    color: #333;
-    margin-bottom: 6px;
-}
-
-.form-control {
-    width: 100%;
-    padding: 10px 12px;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    font-size: 14px;
-    box-sizing: border-box;
-}
-
-.form-control:focus {
-    outline: none;
-    border-color: #4f46e5;
-}
-
-.form-text {
-    font-size: 12px;
-    color: #666;
-    margin-top: 4px;
-}
-
-.form-error {
-    font-size: 12px;
-    color: #c62828;
-    margin-top: 4px;
-}
-
-.file-upload {
-    border: 2px dashed #ddd;
-    border-radius: 6px;
-    padding: 30px;
+/* Empty State */
+.empty-state {
     text-align: center;
-    cursor: pointer;
-    position: relative;
-}
-
-.file-upload input {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    cursor: pointer;
-}
-
-.file-upload-text {
-    font-size: 14px;
-    color: #666;
-}
-
-.editor-content {
-    min-height: 200px;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    padding: 15px;
-    font-size: 14px;
-    line-height: 1.6;
-}
-
-#content-editor-hidden {
-    display: none;
-}
-
-.card {
-    background: #fff;
+    padding: 40px 20px;
+    background-color: #f9fafb;
     border-radius: 8px;
-    margin-bottom: 20px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-}
-
-.card-body {
-    padding: 20px;
-}
-
-.card-body label {
-    display: block;
-    font-size: 13px;
-    color: #666;
-    margin-bottom: 4px;
-}
-
-.card-body code {
-    background: #f5f5f5;
-    padding: 2px 6px;
-    border-radius: 4px;
-    font-size: 13px;
-}
-
-.badge {
-    display: inline-block;
-    padding: 4px 10px;
-    border-radius: 12px;
-    font-size: 12px;
-    font-weight: 600;
-}
-
-.badge-draft {
-    background: #fff3cd;
-    color: #856404;
-}
-
-.badge-pending {
-    background: #cce5ff;
-    color: #004085;
-}
-
-.badge-published {
-    background: #d4edda;
-    color: #155724;
-}
-
-.badge-rejected {
-    background: #f8d7da;
-    color: #721c24;
-}
-
-.card-body img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 6px;
-    margin-bottom: 15px;
-}
-
-.d-flex {
-    display: flex;
-}
-
-.gap-2 {
-    gap: 10px;
 }

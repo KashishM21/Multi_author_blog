@@ -12,8 +12,9 @@ class HomeController extends Controller
         $posts = Post::where('status', 'published')
             ->orderBy('published_at', 'desc')
             ->with('user')
-            ->take(12)
-            ->get();
+            // ->take(12)
+            // ->get();
+            ->paginate((9));
 
         return view('home', compact('posts'));
     }
@@ -29,7 +30,7 @@ class HomeController extends Controller
             ->where('id', '!=', $post->id)
             ->where('status', 'published')
             ->latest('published_at')
-            ->take(3)
+            ->take(5)
             ->get();
 
         return view('post.show', compact('post', 'authorPosts'));

@@ -26,7 +26,8 @@
                 @csrf
                 <div class="form-group">
                     <label for="title">Post Title</label>
-                    <input type="text" name="title" id="title" class="form-control" placeholder="Enter post title" value="{{ old('title') }}" required>
+                    <input type="text" name="title" id="title" class="form-control" placeholder="Enter post title"
+                        value="{{ old('title') }}" required>
                 </div>
                 <div class="form-group">
                     <label for="summary">Summary</label>
@@ -45,6 +46,9 @@
                 <div class="form-actions">
                     <button type="submit" class="btn btn-primary">Publish Post</button>
                     <button type="submit" name="save_draft" value="1" class="btn btn-secondary">Save as Draft</button>
+                    <a href="{{ route('author.posts.index', ['status' => 'draft']) }}">Draft</a>
+                                    <a href="{{ route('author.posts.index') }}" class="btn btn-secondary">Cancel</a>
+
                 </div>
             </form>
         </div>

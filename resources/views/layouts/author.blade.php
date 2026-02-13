@@ -19,6 +19,7 @@
         </div>
 
         <ul class="sidebar-menu">
+            <div class="upper">
             <li class="active">
                 <span class="icon">📊</span>
                 <a href="{{route('author.dashboard')}}">Dashboard</a>
@@ -33,15 +34,18 @@
             </li>
             <li>
                 <span class="icon">📄</span>
-                <a href="#">Draft</a>
+                <a href=" {{ route('author.posts.index', ['status' => 'draft']) }}">Draft</a>
             </li>
+            </div>
+           
+            <div class="lower">
             <li>
                 <span class="icon">🏠</span>
                 <a href="{{route('home')}}">View Site</a>
             </li>
             <li>
                 <span class="icon">⚙️</span>
-                    <a href="{{ route('profile.edit') }}">Settings</a>
+                <a href="{{ route('profile.edit') }}">Settings</a>
             </li>
             <li>
                 <span class="icon">🚪</span>
@@ -51,12 +55,13 @@
                         onclick="event.preventDefault(); this.closest('form').submit();">Logout</a>
                 </form>
             </li>
+            </div>
         </ul>
 
         <div class="sidebar-user">
-            <div class="avatar"></div>
+            <div class="avatar">{{ strtoupper(substr(auth()->user()->name, 0, 1)) }}</div>
             <div class="user-info">
-                <div class="user-name">Author</div>
+                <div class="user-name">{{ auth()->user()->name }}</div>
                 <div class="user-role">Author</div>
             </div>
         </div>

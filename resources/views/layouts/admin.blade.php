@@ -53,9 +53,9 @@
         </ul>
 
         <div class="sidebar-user">
-            <div class="avatar"></div>
+            <div class="avatar">{{ strtoupper(substr(auth()->user()->name, 0, 1)) }}</div>
             <div class="user-info">
-                <div class="user-name"></div>
+                <div class="user-name">{{ auth()->user()->name }}</div>
                 <div class="user-role">Administrator</div>
             </div>
         </div>
