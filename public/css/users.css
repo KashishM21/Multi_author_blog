@@ -1,130 +1,102 @@
-/* Users Table Styles */
+/* Users Table Styles - Simple CSS */
 
-.users-table {
+.users-table,
+.table {
     width: 100%;
     border-collapse: collapse;
     background-color: #ffffff;
+    border: 1px solid #e5e7eb;
     border-radius: 8px;
     overflow: hidden;
 }
 
-.users-table thead {
-    background-color: #f0f0f5;
-}
-
-.users-table th {
-    padding: 15px 20px;
+.users-table th,
+.table th {
+    padding: 12px 15px;
     text-align: left;
+    background-color: #f9fafb;
+    border-bottom: 1px solid #e5e7eb;
     font-size: 12px;
-    font-weight: 600;
-    color: #666666;
+    color: #6b7280;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    font-weight: 600;
 }
 
-.users-table td {
-    padding: 15px 20px;
+.users-table td,
+.table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #f3f4f6;
     font-size: 14px;
-    color: #333333;
-    border-bottom: 1px solid #f0f0f0;
+    color: #374151;
 }
 
-.users-table tbody tr:hover {
-    background-color: #f9f9f9;
+.users-table tr:hover,
+.table tr:hover {
+    background-color: #f9fafb;
 }
 
 .user-name {
-    font-weight: 500;
-    color: #1a1a2e;
+    font-weight: 600;
+    color: #111827;
 }
 
 .role-badge {
-    padding: 5px 12px;
-    border-radius: 20px;
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 12px;
     font-size: 12px;
-    font-weight: 600;
-    text-transform: capitalize;
+    font-weight: 500;
 }
 
 .role-badge.admin {
-    background-color: #e3f2fd;
-    color: #1565c0;
+    background-color: #e0f2fe;
+    color: #0369a1;
 }
 
 .role-badge.author {
-    background-color: #e8f5e9;
-    color: #2e7d32;
+    background-color: #d1fae5;
+    color: #047857;
 }
 
 .actions {
     display: flex;
-    gap: 10px;
+    gap: 8px;
     align-items: center;
-    flex-wrap: wrap;
 }
 
 .btn-action {
-    padding: 6px 14px;
+    padding: 4px 8px;
     border-radius: 4px;
-    font-size: 13px;
+    font-size: 12px;
     text-decoration: none;
-    cursor: pointer;
-    border: none;
     font-weight: 500;
+    border: none;
+    cursor: pointer;
 }
 
 .btn-action.view {
-    background-color: #f3e5f5;
-    color: #7b1fa2;
-}
-
-.btn-action.view:hover {
-    background-color: #e1bee7;
+    background-color: #f3f4f6;
+    color: #374151;
 }
 
 .btn-action.edit {
-    background-color: #e8f4fd;
-    color: #1976d2;
-}
-
-.btn-action.edit:hover {
-    background-color: #bbdefb;
+    background-color: #e0e7ff;
+    color: #4338ca;
 }
 
 .btn-action.delete {
-    background-color: #ffebee;
-    color: #c62828;
-}
-
-.btn-action.delete:hover {
-    background-color: #ffcdd2;
-}
-
-.delete-form {
-    display: inline;
-}
-
-.role-dropdown {
-    position: relative;
-}
-
-.role-dropdown select {
-    padding: 6px 10px;
-    border: 1px solid #dddddd;
-    border-radius: 4px;
-    font-size: 13px;
-    cursor: pointer;
+    background-color: #fee2e2;
+    color: #b91c1c;
 }
 
 .table-wrapper {
     background-color: #ffffff;
     border-radius: 8px;
     overflow: hidden;
-    margin-top: 20px;
 }
 
 .empty-state {
     text-align: center;
     padding: 40px;
-    color: #666666;
+    color: #6b7280;
 }

@@ -89,9 +89,9 @@
                         <td>{{ $post->created_at->diffForHumans() }}</td>
                         <td>
                             <div class="actions">
-                                <a href="{{ route('admin.posts.show', $post) }}" class="action-btn view" title="View">👁</a>
-                                <button class="action-btn edit" onclick="postActions.approve({{ $post->id }}, this)" title="Approve">✓</button>
-                                <button class="action-btn delete" onclick="postActions.reject({{ $post->id }}, this)" title="Reject">✕</button>
+                                <a href="{{ route('admin.posts.show', $post) }}" class="action-btn view" title="View">View</a>
+                                <button class="action-btn edit" onclick="postActions.approve({{ $post->id }}, this)" title="Approve">Approve</button>
+                                <button class="action-btn delete" onclick="postActions.reject({{ $post->id }}, this)" title="Reject">Rejected</button>
                             </div>
                         </td>
                     </tr>

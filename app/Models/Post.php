@@ -40,7 +40,9 @@ class Post extends Model
     public function title(): Attribute
     {
         return Attribute::make(
+           //ACCESSOR
             get: fn($value) => ucwords($value),
+            //MUTUATOR
             set: fn($value) => ucfirst(strtolower(trim($value))),
         );
     }
@@ -52,7 +54,7 @@ class Post extends Model
         return $this->belongsTo(User::class);
     }
     public function author()
-    {
+    {   
         return $this->user();
     }
 

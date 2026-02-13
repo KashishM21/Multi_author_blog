@@ -1,46 +1,51 @@
+/* Global Styles - Simple CSS */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
 }
 
 body {
-    background-color: #f4f6f8;
+    background-color: #f9fafb;
+    font-family: Arial, sans-serif;
+    color: #374151;
 }
 
 .container {
     max-width: 1200px;
     margin: auto;
-    padding: 30px;
+    padding: 20px;
 }
 
 .hero {
     background-color: #ffffff;
-    padding: 50px;
+    padding: 60px 20px;
     border-radius: 8px;
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
+    border: 1px solid #e5e7eb;
 }
 
 .hero h1 {
-    font-size: 32px;
+    font-size: 36px;
     margin-bottom: 15px;
-    color: #222;
+    color: #111827;
 }
 
 .hero p {
-    font-size: 16px;
-    color: #555;
-    margin-bottom: 25px;
+    font-size: 18px;
+    color: #6b7280;
+    margin-bottom: 30px;
 }
 
 .btn {
+    display: inline-block;
     background-color: #4f46e5;
     color: #ffffff;
-    padding: 12px 25px;
+    padding: 12px 24px;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 6px;
     font-weight: bold;
 }
 
@@ -49,22 +54,22 @@ body {
 }
 
 #posts h2 {
-    font-size: 26px;
-    margin-bottom: 20px;
-    color: #222;
+    font-size: 28px;
+    margin-bottom: 25px;
+    color: #111827;
 }
 
 .posts-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
 }
 
 .post-card {
     background-color: #ffffff;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    border: 1px solid #e5e7eb;
 }
 
 .post-card img {
@@ -74,19 +79,20 @@ body {
 }
 
 .post-content {
-    padding: 18px;
+    padding: 20px;
 }
 
 .post-content h3 {
-    font-size: 18px;
+    font-size: 20px;
     margin-bottom: 10px;
-    color: #222;
+    color: #111827;
 }
 
 .post-content p {
     font-size: 14px;
-    color: #666;
-    margin-bottom: 12px;
+    color: #6b7280;
+    margin-bottom: 15px;
+    line-height: 1.5;
 }
 
 .post-content a {
@@ -97,4 +103,17 @@ body {
 
 .post-content a:hover {
     text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .posts-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .posts-grid {
+        grid-template-columns: 1fr;
+    }
 }
